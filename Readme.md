@@ -3,6 +3,19 @@ The goal of this project was to create a thread-safe Java version of the Xoroshi
 (RNG).  The initial Java port was created by Tommy Ettinger for his SquidPony/SquidLib project, and 
 I've since went on to make it atomic and thread-safe for large scale distributed computing needs.
 
+### Example Usage
+Example with a random seed:
+```java
+final Xoroshiro128Plus rng = new Xoroshiro128Plus();
+final int randomInt = rng.nextInt();
+```
+
+Example specifying a seed:
+```java
+final Xoroshiro128Plus rng = new Xoroshiro128Plus(123456);
+final int randomInt = rng.nextLong();
+```
+
 
 ### License
 This is licensed as Creative Commons Attribution 4.0 International (CC BY 4.0):

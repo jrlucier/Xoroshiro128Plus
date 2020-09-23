@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.jrlucier.rng.Xoroshiro128PlusTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-23T02:15:54" hostname="Night" time="0.003">
+  <properties/>
+  <testcase name="testRng" classname="com.github.jrlucier.rng.Xoroshiro128PlusTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

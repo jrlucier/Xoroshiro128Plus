@@ -1,0 +1,47 @@
+#
+# Project specific excludes
+#
+
+
+#
+# Default excludes
+#
+
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.war
+*.ear
+*.sar
+*.class
+
+target/
+build/
+
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/
+.idea
+
+# Gradle
+gradle/
+gradlew
+gradlew.bat
+.gradle
+
+# OS
+.DS_Store
+
+# Misc
+*.swp
+release.properties
+pom.xml.releaseBackup
+pom.xml.tag

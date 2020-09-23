@@ -53,7 +53,7 @@ public class Xoroshiro128Plus implements Serializable {
   }
 
   public final int next(int bits) {
-    while (true) {
+    for (;;) {
       final Xoroshiro128PlusState curState = this.state.get();
       final long s0 = curState.getState0();
       final long s1 = curState.getState1() ^ s0;
@@ -70,7 +70,7 @@ public class Xoroshiro128Plus implements Serializable {
   }
 
   public final long nextLong() {
-    while (true) {
+    for(;;) {
       final Xoroshiro128PlusState curState = this.state.get();
       final long s0 = curState.getState0();
       final long s1 = curState.getState1() ^ s0;

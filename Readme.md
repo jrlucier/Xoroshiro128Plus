@@ -1,5 +1,5 @@
 # Xoroshiro128+ for Java (thread-safe)
-The goal of this project was to create a Java thread-safe version of the Xoroshiro128+ random number generator
+The goal of this project was to create a thread-safe Java version of the Xoroshiro128+ random number generator
 (RNG).  The initial Java port was created by Tommy Ettinger for his SquidPony/SquidLib project, and 
 I've since went on to make it atomic and thread-safe for large scale distributed computing needs.
 

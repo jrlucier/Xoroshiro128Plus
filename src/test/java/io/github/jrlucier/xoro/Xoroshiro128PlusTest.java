@@ -1,4 +1,4 @@
-package com.github.jrlucier.xoro;
+package io.github.jrlucier.xoro;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.github.jrlucier.rng;
+package com.github.jrlucier.xoro;
 
 import java.io.Serializable;
 import java.util.Objects;

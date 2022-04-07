@@ -12,14 +12,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * @author Jeremy Lucier (developer of this implementation)
  */
 public class Xoroshiro128Plus implements Serializable {
+
+  private static final long serialVersionUID = 1018744536171610222L;
+
   private static final long DOUBLE_MASK = (1L << 53) - 1;
   private static final double NORM_53 = 1. / (1L << 53);
   private static final long FLOAT_MASK = (1L << 24) - 1;
   private static final double NORM_24 = 1. / (1L << 24);
 
-  private static final long serialVersionUID = 1018744536171610222L;
-
-  private final AtomicReference<Xoroshiro128PlusState> state = new AtomicReference<>();
+  private final AtomicReference<Xoroshiro128PlusState> state;
 
   /** Creates a new generator seeded using four calls to Math.random(). */
   public Xoroshiro128Plus() {
@@ -37,6 +38,7 @@ public class Xoroshiro128Plus implements Serializable {
    * @param seed a long that won't be used exactly, but will affect both components of state
    */
   public Xoroshiro128Plus(final long seed) {
+    this.state = new AtomicReference<>();
     setSeed(seed);
   }
 
@@ -49,11 +51,12 @@ public class Xoroshiro128Plus implements Serializable {
    * @param stateB the number to use as the second part of the state
    */
   Xoroshiro128Plus(final long stateA, final long stateB) {
+    this.state = new AtomicReference<>();
     setSeed(stateA, stateB);
   }
 
   public final int next(int bits) {
-    for (;;) {
+    for (; ; ) {
       final Xoroshiro128PlusState curState = this.state.get();
       final long s0 = curState.getState0();
       final long s1 = curState.getState1() ^ s0;
@@ -70,7 +73,7 @@ public class Xoroshiro128Plus implements Serializable {
   }
 
   public final long nextLong() {
-    for(;;) {
+    for (; ; ) {
       final Xoroshiro128PlusState curState = this.state.get();
       final long s0 = curState.getState0();
       final long s1 = curState.getState1() ^ s0;
@@ -139,7 +142,7 @@ public class Xoroshiro128Plus implements Serializable {
    * @return a random long between 0 (inclusive) and exclusiveOuterBound (exclusive)
    */
   public long nextLong(long exclusiveOuterBound) {
-    long rand = nextLong();
+    final long rand = nextLong();
     final long randLow = rand & 0xFFFFFFFFL;
     final long boundLow = exclusiveOuterBound & 0xFFFFFFFFL;
 
@@ -260,13 +263,19 @@ public class Xoroshiro128Plus implements Serializable {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     Xoroshiro128Plus xoRoRNG = (Xoroshiro128Plus) o;
 
-    if (this.state.get().getState0() != xoRoRNG.state.get().getState0()) return false;
-    return this.state.get().getState1() == xoRoRNG.state.get().getState1();
+    if (this.state.get().getState0() != xoRoRNG.state.get().getState0()) {
+      return false;
+    }
+    return (this.state.get().getState1() == xoRoRNG.state.get().getState1());
   }
 
   @Override

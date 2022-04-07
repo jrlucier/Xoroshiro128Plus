@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.github.jrlucier'
+group 'com.github.jrlucier.rng'
 version '1.0-SNAPSHOT'
 
 repositories {

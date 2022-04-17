@@ -3,6 +3,21 @@ The goal of this project was to create an atomic (thread-safe) Java version of t
 (RNG).  The initial Java port was created by Tommy Ettinger for his [SquidPony/SquidLib project](https://github.com/SquidPony/SquidLib), and 
 I've since went on to make it atomic and thread-safe for large scale distributed computing needs.
 
+To add to your project:
+Maven:
+```xml
+<dependency>
+  <groupId>io.github.jrlucier.xoro</groupId>
+  <artifactId>xoroshiro128plus</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+Gradle:
+```yaml
+implementation 'io.github.jrlucier.xoro:xoroshiro128plus:1.0'
+```
+
+
 ### Example Usage
 Example with a random seed:
 ```java

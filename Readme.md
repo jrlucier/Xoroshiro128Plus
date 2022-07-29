@@ -9,12 +9,12 @@ Maven:
 <dependency>
   <groupId>io.github.jrlucier.xoro</groupId>
   <artifactId>xoroshiro128plus</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 Gradle:
 ```yaml
-implementation 'io.github.jrlucier.xoro:xoroshiro128plus:1.0'
+implementation 'io.github.jrlucier.xoro:xoroshiro128plus:1.1'
 ```
 
 
@@ -31,7 +31,7 @@ final Xoroshiro128Plus rng = new Xoroshiro128Plus(123456);
 final int randomInt = rng.nextLong();
 ```
 
-Example specifying a seed states:
+Example specifying a both states:
 ```java
 final Xoroshiro128Plus rng = new Xoroshiro128Plus(123456, 789012);
 final int randomInt = rng.nextLong();

@@ -10,9 +10,15 @@ final Xoroshiro128Plus rng = new Xoroshiro128Plus();
 final int randomInt = rng.nextInt();
 ```
 
-Example specifying a seed:
+Example specifying a single seed:
 ```java
 final Xoroshiro128Plus rng = new Xoroshiro128Plus(123456);
+final int randomInt = rng.nextLong();
+```
+
+Example specifying a seed states:
+```java
+final Xoroshiro128Plus rng = new Xoroshiro128Plus(123456, 789012);
 final int randomInt = rng.nextLong();
 ```
 

@@ -50,7 +50,7 @@ public class Xoroshiro128Plus implements Serializable {
    *     seeds are 0
    * @param stateB the number to use as the second part of the state
    */
-  Xoroshiro128Plus(final long stateA, final long stateB) {
+  public Xoroshiro128Plus(final long stateA, final long stateB) {
     this.state = new AtomicReference<>();
     setSeed(stateA, stateB);
   }
